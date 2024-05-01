@@ -1,3 +1,15 @@
 {
-  "extends": "next/core-web-vitals"
+  "extends": [
+    "next/core-web-vitals",
+    "@rotrenanoliveira/eslint-config/next"
+  ],
+  "rules": {
+    "no-useless-constructor": "off",
+    "simple-import-sort/imports": "error",
+    "simple-import-sort/exports": "error",
+    "camelcase": "off"
+  },
+  "plugins": [
+    "simple-import-sort"
+  ]
 }
