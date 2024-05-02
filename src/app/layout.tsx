@@ -1,10 +1,11 @@
 import './globals.css'
 
-import { QueryClientProvider } from '@tanstack/react-query'
 import type { Metadata } from 'next'
 import { Inter } from 'next/font/google'
+import { ThemeProvider } from 'next-themes'
 
-import { queryClient } from '@/lib/react-query'
+import { cn } from '@/lib/utils'
+import ReactQueryProvider from '@/providers/react-query-provider'
 
 const inter = Inter({ subsets: ['latin'] })
 
@@ -19,10 +20,14 @@ export default function RootLayout({
   children: React.ReactNode
 }>) {
   return (
-    <QueryClientProvider client={queryClient}>
-      <html lang="en">
-        <body className={inter.className}>{children}</body>
-      </html>
-    </QueryClientProvider>
+    <html lang="en">
+      <body className={cn(inter.className, 'dark:bg-slate-900')}>
+        <ReactQueryProvider>
+          <ThemeProvider attribute="class" defaultTheme="dark">
+            {children}
+          </ThemeProvider>
+        </ReactQueryProvider>
+      </body>
+    </html>
   )
 }
