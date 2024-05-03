@@ -3,6 +3,7 @@ import './globals.css'
 import type { Metadata } from 'next'
 import { Inter } from 'next/font/google'
 import { ThemeProvider } from 'next-themes'
+import { Toaster } from 'sonner'
 
 import { cn } from '@/lib/utils'
 import ReactQueryProvider from '@/providers/react-query-provider'
@@ -23,6 +24,8 @@ export default function RootLayout({
     <html lang="en">
       <body className={cn(inter.className, 'dark:bg-slate-900')}>
         <ReactQueryProvider>
+          <Toaster richColors />
+
           <ThemeProvider attribute="class" defaultTheme="dark">
             {children}
           </ThemeProvider>
