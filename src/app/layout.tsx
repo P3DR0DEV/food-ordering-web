@@ -22,11 +22,11 @@ export default function RootLayout({
 }>) {
   return (
     <html lang="en">
-      <body className={cn(inter.className, 'dark:bg-slate-900')}>
+      <body className={cn(inter.className)}>
         <ReactQueryProvider>
           <Toaster richColors />
 
-          <ThemeProvider attribute="class" defaultTheme="dark">
+          <ThemeProvider attribute="class" defaultTheme="light">
             {children}
           </ThemeProvider>
         </ReactQueryProvider>
