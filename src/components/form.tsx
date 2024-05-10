@@ -1,5 +1,6 @@
 'use client'
 
+import { ArrowRight } from 'lucide-react'
 import Link from 'next/link'
 import React from 'react'
 import { toast } from 'sonner'
@@ -57,10 +58,13 @@ export function InputForm() {
           />
         </Label>
       </div>
-      <Button type="submit">SignIn</Button>
-      <p className="text-xs text-zinc-400">
+      <Button type="submit">
+        Login
+        <ArrowRight className="ml-2 size-5" />
+      </Button>
+      <p className="text-xs text-zinc-400 self-end">
         Don&apos;t have an account?
-        <Link href="/signup" className="text-zinc-500">
+        <Link href="/signup" className="ml-2 font-medium text-zinc-700 hover:text-zinc-900">
           SignUp
         </Link>
       </p>

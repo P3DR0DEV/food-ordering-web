@@ -2,7 +2,6 @@ import './globals.css'
 
 import type { Metadata } from 'next'
 import { Inter } from 'next/font/google'
-import { ThemeProvider } from 'next-themes'
 import { Toaster } from 'sonner'
 
 import { cn } from '@/lib/utils'
@@ -21,14 +20,11 @@ export default function RootLayout({
   children: React.ReactNode
 }>) {
   return (
-    <html lang="en">
-      <body className={cn(inter.className)}>
+    <html lang="en" className="light">
+      <body className={cn('min-h-screen antialiased font-sans grainy', inter.className)}>
         <ReactQueryProvider>
           <Toaster richColors />
-
-          <ThemeProvider attribute="class" defaultTheme="light">
-            {children}
-          </ThemeProvider>
+          {children}
         </ReactQueryProvider>
       </body>
     </html>
